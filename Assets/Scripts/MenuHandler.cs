@@ -5,9 +5,13 @@ using UnityEngine.SceneManagement;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
+using UnityEngine.UI;
 
 public class MenuHandler : MonoBehaviour
 {
+    
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +23,7 @@ public class MenuHandler : MonoBehaviour
     {
         
     }
-
+    
     public void StartNew()
     {
         SceneManager.LoadScene(1);
@@ -33,4 +37,6 @@ public class MenuHandler : MonoBehaviour
         Application.Quit();
 #endif
     }
+
+    
 }
