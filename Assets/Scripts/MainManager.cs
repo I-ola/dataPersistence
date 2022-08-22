@@ -15,17 +15,21 @@ public class MainManager : MonoBehaviour
     public Text playerName;
 
 
-    private string userName;
+    public string Name;
     private bool m_Started = false;
     private int m_Points;
-    
 
+    public static bool done = false;
     private bool m_GameOver = false;
     // Start is called before the first frame update
     void Start()
     {
+       
+        instance = this;
+        DontDestroyOnLoad(gameObject);
 
-        playerName.text = $"Name : {PlayerName.theName}";
+        playerName.text = $"Name:{DataPersistence.instance.playerName}";
+        MainManager.instance.playerName = playerName;
 
 
         string highScore = PlayerPrefs.GetInt("BestScore", 0).ToString();
@@ -66,6 +70,7 @@ public class MainManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                Destroy(gameObject);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
@@ -95,6 +100,13 @@ public class MainManager : MonoBehaviour
         return bestScore.text;
     }
 
+    public void BackToMainMenu()
+    {
+        Destroy(gameObject);
+        
+        done = true;
+        PlayerName.theName = DataPersistence.instance.playerName;
+    }
     
    
 }

@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 1024872253}
   - component: {fileID: 1024872254}
   m_Layer: 0
-  m_Name: MainManager
+  m_Name: OpeningManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -470,10 +470,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bestScore: {fileID: 1000711318}
-  stringInput: {fileID: 2106831041}
-  stringValueText: {fileID: 314367946}
-  stringValue: 
-  mainManager: {fileID: 0}
+  userName: {fileID: 1794478539}
+  inputedName: {fileID: 314367948}
+  playerName: 
+  newName: 
 --- !u!1 &1072809837
 GameObject:
   m_ObjectHideFlags: 0

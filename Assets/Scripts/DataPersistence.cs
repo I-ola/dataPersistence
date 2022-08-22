@@ -8,11 +8,13 @@ public class DataPersistence : MonoBehaviour
     public Text bestScore;
     public static DataPersistence instance;
 
-    public GameObject stringInput;
+    public InputField userName;
 
-    public GameObject stringValueText;
+    public Text inputedName;
 
-    public string stringValue;
+    public string playerName;
+    public string newName;
+    
 
     
    
@@ -20,13 +22,12 @@ public class DataPersistence : MonoBehaviour
     {
         BestScore();
 
-        if (instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
         instance = this;
         DontDestroyOnLoad(gameObject);
+
+        inputedName.text = $"Name: {PlayerName.theName}";
+       // DataPersistence.instance.inputedName = inputedName;
+       // IsDone();
     }
 
     public void BestScore()
@@ -35,10 +36,22 @@ public class DataPersistence : MonoBehaviour
         bestScore.text = $"BestScore : {highScore}";
     }
 
+    public void DisplayName()
+    {
+        
+    }
+
     public void StoreName()
     {
-        stringValue = stringInput.GetComponent<Text>().text;
-        stringValueText.GetComponent<Text>().text = $"Name : {stringValue}";
-        PlayerName.theName = stringValue;
+        playerName = userName.text;
+        DataPersistence.instance.playerName = playerName;  
     }
+
+    /*public void IsDone()
+    {
+        if(MainManager.done == true)
+        {
+            Destroy(gameObject);
+        }
+    }*/
 }

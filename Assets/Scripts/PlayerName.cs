@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerName : MonoBehaviour
 {
+    public static PlayerName instance;
     public static string theName;
+    
+
     
 }
