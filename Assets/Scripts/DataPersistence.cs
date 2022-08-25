@@ -21,11 +21,13 @@ public class DataPersistence : MonoBehaviour
     private void Awake()
     {
         BestScore();
+        DisplayName();
+        
 
         instance = this;
         DontDestroyOnLoad(gameObject);
 
-        inputedName.text = $"Name: {PlayerName.theName}";
+        
        // DataPersistence.instance.inputedName = inputedName;
        // IsDone();
     }
@@ -38,7 +40,7 @@ public class DataPersistence : MonoBehaviour
 
     public void DisplayName()
     {
-        
+        inputedName.text = $"Name: {PlayerName.theName}";
     }
 
     public void StoreName()
@@ -47,11 +49,6 @@ public class DataPersistence : MonoBehaviour
         DataPersistence.instance.playerName = playerName;  
     }
 
-    /*public void IsDone()
-    {
-        if(MainManager.done == true)
-        {
-            Destroy(gameObject);
-        }
-    }*/
+    
+   
 }
