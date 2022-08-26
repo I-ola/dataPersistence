@@ -100,7 +100,7 @@ public class MainManager : MonoBehaviour
 
     public void BackToMainMenu()
     {
-        SaveSession.instance.userName = DataPersistence.instance.playerName;
+        
     
         PlayerName.theName = DataPersistence.instance.playerName;
     }
